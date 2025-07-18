@@ -79,11 +79,31 @@ VeluTalks is an open-source real-time chat application that enables seamless com
    ```
 
 3. **Environment Setup**
-   Create a `.env.local` file in the root directory:
-   ```env
-   MONGODB_URI=your_mongodb_uri
-   JWT_SECRET=your_jwt_secret
+   
+   Copy `.env.example` to `.env.local`:
+   ```bash
+   cp .env.example .env.local
    ```
+   
+   Update the environment variables in `.env.local`:
+
+   a) **MongoDB URI**:
+   - Create a [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) account
+   - Create a new cluster (free tier works fine)
+   - Click "Connect" and choose "Connect your application"
+   - Copy the connection string and replace `<username>`, `<password>`, and `<cluster-url>` with your details
+
+   b) **JWT Secret**:
+   - Generate a secure random string using:
+     ```bash
+     node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+     ```
+   - Copy the output and set it as your `JWT_SECRET`
+
+   c) **Other Variables**:
+   - Update `NEXT_PUBLIC_API_URL` if deploying to production
+   - Configure email settings if implementing email verification
+   - Adjust rate limiting values based on your needs
 
 4. **Start the development server**
    ```bash
@@ -136,8 +156,14 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ### Vercel (Recommended)
 1. Push your code to GitHub
 2. Connect your repository to Vercel
-3. Add environment variables in Vercel dashboard
+3. Add environment variables in Vercel dashboard:
+   - Copy each variable from your `.env.local`
+   - Make sure to update `NEXT_PUBLIC_API_URL` to your production URL
+   - Set `NODE_ENV` to "production"
+   - Double-check that your MongoDB URI and JWT secret are secure
 4. Deploy!
+
+> **Security Note**: Never commit your `.env` or `.env.local` files to version control. They contain sensitive information that should be kept private.
 
 ### Manual Deployment
 \`\`\`bash
