@@ -1,23 +1,32 @@
-# 🚀 Private Chat Room Application
+# VeluTalks
 
-A full-stack, real-time private chat room application built with modern web technologies. Designed for teams, communities, and friends who need secure, private communication spaces.
+VeluTalks is an open-source real-time chat application that enables seamless communication and collaboration. Built with modern technologies and best practices, it provides a secure and efficient platform for instant messaging and group conversations.
 
-![Chat App Screenshot](https://via.placeholder.com/800x600/4F46E5/FFFFFF?text=ChatRoom+App)
+## Features
 
-## ✨ Features
+- � Real-time messaging with instant updates
+- 👥 Group chat rooms for team collaboration
+- 🔒 Secure authentication and data protection
+- 🌙 Dark mode support
+- 🎨 Modern and responsive UI
+- ⚡ Fast and reliable performance
 
-### 🔐 Authentication & Security
-- JWT-based authentication with bcrypt password hashing
-- Secure token-based route protection
-- HTTPS support ready for production
+## Tech Stack
 
-### 💬 Real-time Messaging
-- Instant message delivery using Socket.IO
-- Typing indicators and online/offline status
-- Message timestamps and read receipts
-- Support for up to 50 users per room
+### Frontend
+- Next.js 14 (React framework)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui components
 
-### 🏠 Room Management
+### Backend
+- Node.js
+- MongoDB
+- Socket.io for real-time communication
+
+### Authentication
+- JWT (JSON Web Tokens)
+- bcrypt for password hashing
 - Create private rooms with unique invite codes
 - Join rooms using invite codes
 - Room member management and moderation
@@ -59,51 +68,53 @@ A full-stack, real-time private chat room application built with modern web tech
 ### Installation
 
 1. **Clone the repository**
-   \`\`\`bash
-   git clone https://github.com/yourusername/private-chat-app.git
-   cd private-chat-app
-   \`\`\`
+   ```bash
+   git clone https://github.com/sreyansu/velutalk.git
+   cd velutalk
+   ```
 
 2. **Install dependencies**
-   \`\`\`bash
-   npm install
-   \`\`\`
+   ```bash
+   pnpm install
+   ```
 
 3. **Environment Setup**
-   Create a \`.env.local\` file in the root directory:
-   \`\`\`env
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/chatroom
-   JWT_SECRET=your-super-secret-jwt-key-here
-   NEXT_PUBLIC_APP_URL=http://localhost:3000
-   \`\`\`
+   Create a `.env.local` file in the root directory:
+   ```env
+   MONGODB_URI=your_mongodb_uri
+   JWT_SECRET=your_jwt_secret
+   ```
 
 4. **Start the development server**
-   \`\`\`bash
-   npm run dev
-   \`\`\`
+   ```bash
+   pnpm dev
+   ```
 
 5. **Open your browser**
    Navigate to \`http://localhost:3000\`
 
 ## 📁 Project Structure
 
-\`\`\`
-private-chat-app/
+```
+velutalk/
 ├── app/                    # Next.js App Router
 │   ├── api/               # API routes
 │   │   ├── auth/          # Authentication endpoints
 │   │   └── rooms/         # Room management endpoints
 │   ├── dashboard/         # Dashboard page
 │   ├── room/             # Chat room pages
-│   └── page.tsx          # Home page
-├── lib/                   # Utility libraries
-│   ├── mongodb.ts        # Database connection
-│   ├── auth.ts           # Authentication helpers
-│   └── socket.ts         # Socket.IO server setup
+│   └── page.tsx          # Landing page
 ├── components/           # Reusable UI components
-│   └── ui/              # ShadCN UI components
-├── server.js            # Custom server with Socket.IO
-└── README.md           # This file
+│   ├── ui/              # shadcn/ui components
+│   ├── navbar.tsx       # Navigation component
+│   ├── mode-toggle.tsx  # Theme toggle component
+│   └── theme-provider.tsx # Theme context provider
+├── lib/                 # Utility libraries
+│   ├── mongodb.ts       # Database connection
+│   ├── auth.ts         # Authentication helpers
+│   └── socket.ts       # Socket.IO setup
+├── public/             # Static files
+└── styles/            # Global styles
 \`\`\`
 
 ## 🔧 Configuration
@@ -182,10 +193,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 If you have any questions or need help, please:
-1. Check the [Issues](https://github.com/yourusername/private-chat-app/issues) page
+1. Check the [Issues](https://github.com/sreyansu/velutalk/issues) page
 2. Create a new issue if your problem isn't already reported
-3. Join our [Discord community](https://discord.gg/your-invite) for real-time help
+3. Consider contributing to make VeluTalks even better!
 
 ---
 
-**Made with ❤️ by the ChatRoom Team**
+**Made with ❤️ by [Sreyansu](https://github.com/sreyansu)**
