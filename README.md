@@ -1,6 +1,18 @@
-# VeluTalks
+# VeluTalk
 
-VeluTalks is an open-source real-time chat application that enables seamless communication and collaboration. Built with modern technologies and best practices, it provides a secure and efficient platform for instant messaging and group conversations.
+VeluTalk is a real-time chat application built with Next.js, Node.js, and Socket.io.
+
+## Project Structure
+
+This project is organized into two main directories:
+
+- [`/frontend`](./frontend): Next.js-based web application
+- [`/backend`](./backend): Node.js server application
+
+Please refer to the README files in each directory for specific setup instructions and documentation:
+
+- [Frontend Documentation](./frontend/README.md)
+- [Backend Documentation](./backend/README.md)
 
 ## Features
 
