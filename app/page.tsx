@@ -10,9 +10,9 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="container py-16">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col items-center text-center gap-8 pb-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-center">
             Welcome to <span className="text-primary">VeluTalks</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-[800px]">
@@ -32,8 +32,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <Card>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 pt-8">
+          <Card className="bg-background/60">
             <CardContent className="pt-6">
               <div className="space-y-2">
                 <MessageCircle className="h-10 w-10 text-primary" />
